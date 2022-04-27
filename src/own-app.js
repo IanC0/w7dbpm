@@ -13,7 +13,7 @@ const app = async (yargsObj) => {
     } else if (yargsObj.delete) {
         await deleteMovie(collection, {title: yargsObj.title}) 
      } else if (yargsObj.update) {
-         await updateMovies(collection, {title: {title: yargsObj.title}}, {title: yargsObj.newTitle})  
+         await updateMovies(collection, {title: yargsObj.title}, yargsObj.newTitle)  
      } else {
         console.log("Incorrect Command")
     } 

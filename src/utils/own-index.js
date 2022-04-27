@@ -27,10 +27,10 @@ exports.deleteMovie = async (collection, movieObj) => {
     }
 }
 
-exports.updateMovies = async (collection) => {
+exports.updateMovies = async (collection, title, newTitle) => {
     try {
         console.log("updateMovies try")
-        let updateList = await collection.updateOne({title: 'Airplane'}, {$set : {title: 'Spiderman 2'}} )
+        let updateList = await collection.updateOne(title, {$set : {title: newTitle}} )
         console.log(updateList)
     } catch (error) {
         console.log("updateMovies fail")
